@@ -16,12 +16,25 @@
     </style>
 </head>
 <body>
-    <h1>Iniciando estudos com DOM</h1>
+    <h1 class="h1class">Iniciando estudos com DOM</h1>
     <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
-    <div>Clique em mim</div>
+    <p name="pname">Aprendendo a usar <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
 
     <script>
+        var corpo = window.document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        var d = window.document.getElementById('msg')
+        var h1 = window.document.getElementsByClassName('h1class')[0]
+        var p0 = window.document.getElementsByName('pname')[0]
+        var teste = window.document.querySelector('#msg') // Precisamos indicar se é uma classe ou um id.
+
+        corpo.style.background = 'black'
+        p1.style.color = 'red'
+        d.style.background = 'green'
+        d.innerText = 'Estou aguardando...'
+        window.document.write(`<br>Está escrito assim: ${p1.innerText}`)
+        //window.document.getElementById('msg').innerText = 'Olá!' Forma completa
 
     </script>
 </body>
