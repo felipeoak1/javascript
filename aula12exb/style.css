@@ -26,23 +26,25 @@ img {
 section {
     background-color: white;
     width: 500px;
-    height: 200px;
+
     margin: auto;
     border-radius: 10px;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.541);
 }
 
-form {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    
+article {
     font-weight: bolder;
-    height: 95%;
+    height: 100%;
     padding: 20px 10px 10px 10px;
 }
 
-form input[type=button] {
+div {
+    margin-top: 20px;
+}
+
+input[type=button] {
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 100px;
 }
 
