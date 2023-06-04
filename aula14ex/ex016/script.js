@@ -6,7 +6,7 @@ function verificar() {
     var res = window.document.querySelector("#text1")
     res.innerHTML = ''
 
-    if (Number(inicio.value) > Number(fim.value) || Number(passo.value) > Number(fim.value)) {
+    if (Number(inicio.value) > Number(fim.value) || Number(passo.value) > Number(fim.value) || inicio.value.length == 0 || fim.value.length == 0  || passo.value.length == 0 || Number(passo.value) == 0) {
         res.innerHTML = 'Informe um valor correto.'
     } else {
         res1.innerHTML = 'Contando...'
