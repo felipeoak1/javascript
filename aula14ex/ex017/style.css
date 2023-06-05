@@ -49,11 +49,6 @@ input[type=button] {
     width: 100px;
 }
 
-select {
-    width: 100px;
-    height: 100px;
-}
-
 footer {
     padding: 10px;
     text-align: center;
