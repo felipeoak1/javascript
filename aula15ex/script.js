@@ -39,3 +39,6 @@ function verificar() {
     res.appendChild(p)
     
 }
+
+
+document.getElementsByTagName
