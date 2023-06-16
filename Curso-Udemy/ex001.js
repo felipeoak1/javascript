@@ -14,3 +14,18 @@ function reverteNumero(n) {
 console.log(reverteNumero(875))
 
 //  Escreva uma função que permita contar o número de vogais contidas em uma string fornecida pelo usuário. Por exemplo, o usuário informa a string “Beterraba”, e a função retorna o número 4 (há 4 vogais nessa palavra).
+
+function contaVogais(n) {
+    let vowels = ["a", "e", "i", "o", "u"]
+    let contador = 0
+    for (c of n) {
+       if (vowels.indexOf(c) != -1){
+        contador++
+       }
+    }
+    return console.log(contador)
+}
+
+contaVogais('olá, tudo bem?')
+
+// Escreva uma função que calcule e retorne o fatorial de um número inteiro fornecido pelo usuário.
