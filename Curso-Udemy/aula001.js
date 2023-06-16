@@ -11,3 +11,5 @@ console.log(parseFloat(num1.toFixed(2)))
 /* Além disso podemos resolver diretamente com cálculos */
 let soma = ((num1 * 100) + (num2 * 100)) / 100
 console.log(soma) 
+
+

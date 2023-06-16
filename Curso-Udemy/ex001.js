@@ -53,4 +53,4 @@ function contarCaracteres(n, a) {
     return contador
 }
 
-console.log(contarCaracteres("Olá Josué, tudo bem?", "a"))
+console.log(contarCaracteres("Contando a quantidade de carecteres especificos na string", "e"))
