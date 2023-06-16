@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Dicionários</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main {
+            display: flex;
+            flex-direction: center;
+            justify-content: center;
+            
+            background-color: aliceblue;
+            height: 100vh;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background-color: rgb(170, 89, 139);
+            width: 60vw;
+        }
+
+        form {
+            background-color: white;
+            width: 80%;
+            height: 30%;
+            padding: 10px;
+
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+        }
+
+        form input {
+            border: 0.5px solid rgba(0, 0, 0, 0.507);
+            outline: none;
+            border-radius: 5px;
+        }
+
+        form input[type=submit] {
+            width: 40%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <form action="" method="POST" autocomplete="on">
+                <div>
+                    <label for="iname"><strong>Nome</strong></label>
+                    <input type="text" name="nome" id="iname" required>
+                </div>
+
+                <div>
+                    <label for="isobrenome"><strong>Sobrenome</strong></label>
+                    <input type="text" name="Sobrenome" id="isobrenome" required>
+                </div>
+
+                <div>
+                    <label for="ipeso"><strong>Peso</strong></label>
+                    <input type="number" name="peso" id="ipeso" max="300">
+                </div>
+
+                <div>
+                    <label for="ialtura"><strong>Altura</strong></label>
+                    <input type="number" name="altura" id="ialtura" placeholder="Digite a altura em cm.">
+                </div>
+
+                <button type="button" onclick="dados()">Enviar</button>
+            </form>
+
+        </section>
+    </main>
+    <script>
+        var array = [] 
+
+        function dados() {
+            let nome = document.getElementById("iname").value
+            let sobrenome = document.getElementById("isobrenome").value
+            let peso = document.getElementById("ipeso").value
+            let altura = document.getElementById("ialtura").value
+            
+            let objeto = {
+                nome: nome,
+                sobrenome: sobrenome,
+                peso: peso, 
+                altura: altura
+            }
+            
+            array.push(objeto)
+            console.log(array)
+        }
+    </script>
+</body>
+</html>
