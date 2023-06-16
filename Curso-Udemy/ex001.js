@@ -42,6 +42,15 @@ console.log(factorial(6))
 
 //  Escreva uma função em JavaScript que conte quantas vezes um caractere aparece em uma string. Tanto o caractere quanto a string devem ser fornecidos pelo usuário.
 
-function contarCaracteres(n) {
+function contarCaracteres(n, a) {
+    let contador = 0
     
+    for (c of n) {
+        if (c == a) {
+            contador++
+        }    
+    }
+    return contador
 }
+
+console.log(contarCaracteres("Olá Josué, tudo bem?", "a"))
