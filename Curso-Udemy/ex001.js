@@ -29,3 +29,19 @@ function contaVogais(n) {
 contaVogais('olá, tudo bem?')
 
 // Escreva uma função que calcule e retorne o fatorial de um número inteiro fornecido pelo usuário.
+
+function factorial(n) {
+    let controle = 1
+    for (let c = n; c > 0; c--) {
+        controle *= c
+    }
+    return controle
+}
+
+console.log(factorial(6))
+
+//  Escreva uma função em JavaScript que conte quantas vezes um caractere aparece em uma string. Tanto o caractere quanto a string devem ser fornecidos pelo usuário.
+
+function contarCaracteres(n) {
+    
+}
