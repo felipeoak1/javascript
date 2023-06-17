@@ -13,32 +13,31 @@
         }
 
         main {
-            display: flex;
-            flex-direction: center;
-            justify-content: center;
-            
-            background-color: aliceblue;
+
+            background-color: rgb(224, 216, 216);
             height: 100vh;
         }
 
         section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
 
             background-color: rgb(170, 89, 139);
             width: 60vw;
+            height: 50vh;
         }
 
         form {
-            background-color: white;
-            width: 80%;
-            height: 30%;
-            padding: 10px;
-
             display: flex;
-            flex-flow: column nowrap;
+            flex-direction: column;
             justify-content: space-between;
+
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            padding: 10px;
         }
 
         form input {
@@ -47,7 +46,7 @@
             border-radius: 5px;
         }
 
-        form input[type=submit] {
+        form button {
             width: 40%;
         }
     </style>
@@ -79,6 +78,8 @@
                 <button type="button" onclick="dados()">Enviar</button>
             </form>
 
+            <div id="res"></div>
+            
         </section>
     </main>
     <script>
@@ -89,16 +90,19 @@
             let sobrenome = document.getElementById("isobrenome").value
             let peso = document.getElementById("ipeso").value
             let altura = document.getElementById("ialtura").value
-            
-            let objeto = {
+            let res = document.getElementById("res")
+            res.style.textAlign = "left"
+
+            array.push({
                 nome: nome,
                 sobrenome: sobrenome,
                 peso: peso, 
                 altura: altura
-            }
+            })
             
-            array.push(objeto)
+            res.innerHTML += `<div>${nome} ${sobrenome} ${peso}</div>`
             console.log(array)
+
         }
     </script>
 </body>
