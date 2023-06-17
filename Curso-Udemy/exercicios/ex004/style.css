@@ -70,3 +70,10 @@ table {
 th {
     text-align: left;
 }
+
+div > p {
+    background-color: rgb(130, 130, 204);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}

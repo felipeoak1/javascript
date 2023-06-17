@@ -53,20 +53,22 @@
                 </tbody>
         
             </table>
-            <form action="">
+            <form action="" onsubmit="enviarFormulario(event)">
                 <div>
                     <label for="ialtura">Altura</label>
-                    <input type="number" name="altura" id="ialtura">
+                    <input type="number" name="altura" id="ialtura" step="0.1">
                 </div>
                
                <div>
-                    <label for="ipeso">Pedo</label>
+                    <label for="ipeso">Peso</label>
                     <input type="number" name="peso" id="ipeso">
                </div>
 
-               <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" onclick="calcular()"></input>
             </form>
+            <div id="res"></div>
         </section>
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
