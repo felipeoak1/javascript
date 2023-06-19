@@ -52,11 +52,12 @@ console.log(
     `Dia da semana - ${data7.getDay()}` // Semana também começa do zero.
 )
 
+
+// Exemplo de função para data formatada
 function acrescentaZero(num) {
     return num >= 10 ? num: `0${num}`
 }
 
-// Exemplo de função para data formatada
 function dataFormatada(data) {
     const dia = acrescentaZero(data.getDate())
     const mes = acrescentaZero(data.getMonth() + 1)
