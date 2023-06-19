@@ -56,7 +56,7 @@
             <form action="" onsubmit="enviarFormulario(event)">
                 <div>
                     <label for="ialtura">Altura</label>
-                    <input type="number" name="altura" id="ialtura" step="0.1">
+                    <input type="number" name="altura" id="ialtura" step="0.01">
                 </div>
                
                <div>
@@ -64,7 +64,7 @@
                     <input type="number" name="peso" id="ipeso">
                </div>
 
-                <input type="submit" value="Enviar" onclick="calcular()"></input>
+                <input type="submit" value="Enviar" id="submit"></input>
             </form>
             <div id="res"></div>
         </section>
