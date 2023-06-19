@@ -5,7 +5,7 @@ function enviarFormulario(event) {
     // ou realizar outras ações desejadas
 
   }
-  
+
 let submit = document.getElementById("submit")
 submit.addEventListener("click", calcular)
 
@@ -38,3 +38,5 @@ function calcular() {
     }
 
 }
+
+
