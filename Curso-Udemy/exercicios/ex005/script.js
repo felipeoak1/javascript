@@ -1,11 +1,11 @@
 let res = document.getElementById("hora")
 let data = new Date()
-let dia_semana = data.getDay()
-let dia_mes = data.getDate()
-let mes = data.getMonth()
+let dia_semana = data.getDay().toString()
+let dia_mes = data.getDate().toString().padStart(2 , '0')
+let mes = data.getMonth().toString()
 let ano = data.getFullYear()
-let hora = data.getHours()
-let minutos = data.getMinutes()
+let hora = data.getHours().toString().padStart(2 , '0')
+let minutos = data.getMinutes().toString().padStart(2 , '0')
 
 let dias_da_semana = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sabádo', 'Domingo']
 let meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
