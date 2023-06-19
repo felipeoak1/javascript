@@ -51,3 +51,24 @@ console.log(
     `Milissegundos - ${data7.getMilliseconds()}\n`,
     `Dia da semana - ${data7.getDay()}` // Semana também começa do zero.
 )
+
+function acrescentaZero(num) {
+    return num >= 10 ? num: `0${num}`
+}
+
+
+// Exemplo de função para data formatada
+function dataFormatada(data) {
+    const dia = acrescentaZero(data.getDate())
+    const mes = acrescentaZero(data.getMonth() + 1)
+    const ano = acrescentaZero(data.getFullYear())
+    const hora = acrescentaZero(data.getHours())
+    const minutos = acrescentaZero(data.getMinutes())
+    const segundos = acrescentaZero(data.getSeconds())
+
+    return `${dia}/${mes}/${ano} - ${hora}:${minutos}:${segundos}`
+}
+
+const data8 = new Date('2023-06-9 16:04:59')
+const dataBrasil = dataFormatada(data8)
+console.log(dataBrasil)
