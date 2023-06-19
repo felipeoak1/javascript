@@ -56,7 +56,6 @@ function acrescentaZero(num) {
     return num >= 10 ? num: `0${num}`
 }
 
-
 // Exemplo de função para data formatada
 function dataFormatada(data) {
     const dia = acrescentaZero(data.getDate())
@@ -72,3 +71,20 @@ function dataFormatada(data) {
 const data8 = new Date('2023-06-9 16:04:59')
 const dataBrasil = dataFormatada(data8)
 console.log(dataBrasil)
+
+// No lugar de criarmos uma função para este tratamento, podemos utilizar o método padStart, onde indicamos como parâmetro a quantidade de caracteres que desejamos alterar e em seguida para qual o caractere será alterado. Os caracteres serão inseridos ao inicio da string. Obs. Precisamos converter a nossa variável para String.
+
+function dataFormatada1(data) {
+    const dia = data.getDate().toString().padStart(2, 0)
+    const mes = (data.getMonth() + 1).toString().padStart(2, 0)
+    const ano = data.getFullYear().toString().padStart(2, 0)
+    const hora = data.getHours().toString().padStart(2, 0)
+    const minutos = data.getMinutes().toString().padStart(2, 0)
+    const segundos = data.getSeconds().toString().padStart(2, 0)
+    
+    return `${dia}/${mes}/${ano} - ${hora}:${minutos}:${segundos}`
+}
+
+const data9 = new Date('2023-06-9 16:04:59')
+const dataBrasil1 = dataFormatada1(data9)
+console.log(dataBrasil1)
