@@ -14,3 +14,9 @@ for (let c = 0; c < elementos.length; c++) {
     element.innerText = texto
     section.appendChild(element)
 }
+
+let str = 'teste de iteracao do for of    '
+
+ for ( c of str) {
+    console.log(c)
+ }
