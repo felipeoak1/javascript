@@ -25,7 +25,7 @@ let f = 'C';
 console.log(d, e, f)
 
 // Copiando valores:
-let array = [1, 2, 3 ,4, 5, 6]
+let array = [1, 2, 3 ,4, 5, 6];
 const [primeiroNumero, segundoNumero] = array
 console.log(primeiroNumero, segundoNumero)
 /* Neste exemplo temos um array com números de 1 a 6 e estamos criando duas variáveis que irão receber os dois primeiros valores do array, pois a atribuição começa do primeiro elemento até o último. */
