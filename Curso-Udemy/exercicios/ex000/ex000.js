@@ -21,3 +21,13 @@ function truncatString(m,i=0, f) {
 }
 
 console.log(truncatString("Robin Singh",0,4));
+
+//  Write a JavaScript function to convert a string into abbreviated form.
+
+function abbrevName(n) {
+   return `${n.slice(0, n.indexOf(' ') + 2)}.`
+}
+
+console.log(abbrevName('Robin Singh'))
+
+//  Write a JavaScript function that hides email addresses to prevent unauthorized access.
