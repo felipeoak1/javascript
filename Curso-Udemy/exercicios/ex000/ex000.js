@@ -31,3 +31,18 @@ function abbrevName(n) {
 console.log(abbrevName('Robin Singh'))
 
 //  Write a JavaScript function that hides email addresses to prevent unauthorized access.
+
+
+function protectEmail(n) {
+    const elements = ['@']
+    for (c of elements) {
+        if (n.indexOf(c) >= -1) {
+            let slicedEmail = `${n.slice(0, 5)}...${n.slice(n.indexOf(c), n.length)}`
+            console.log(slicedEmail)
+        }
+    }
+}
+
+protectEmail('robin_singh@example.com')
+
+// Write a JavaScript function to parameterize a string.
