@@ -6,3 +6,11 @@ let count = 0
 setIntervar(function () {
 	console.log(count++)
 }, 1000)
+
+/* O primeiro parâmetro da nossa função setInterval também é uma função, e quando uma função é passada como parâmetro para outra nós a chamamos de callback, quanto ao nosso segundo parâmetro se trata do tempo em milissegundos que aquela função ficará acontecendo. Como não demos uma funcionalidade para que aconteça a sua parada, o código ficará rodando infinitamente. */
+
+// Exemplo de função com setTimeout onde executamos uma mensagem de boas vindas após cinco segundos, também possui as mesmas características do setInterval em relação aos argumentos passados.
+
+setTimeout(function () {
+	console.log('Bem Vindo(a)')
+}, 5000)
