@@ -47,8 +47,9 @@ protectEmail('robin_singh@example.com')
 
 // Write a function what receive 2 numbers and return bigger
 
-function maxNumber(n, n1) {
-     return n > n1 ? n : n1
-}
+let maxNumber = (n, n1) => n > n1 ? n : n1
 
 console.log(maxNumber(23, 6))
+
+
+
