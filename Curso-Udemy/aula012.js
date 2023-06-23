@@ -14,3 +14,24 @@ setIntervar(function () {
 setTimeout(function () {
 	console.log('Bem Vindo(a)')
 }, 5000)
+
+// Outro detalhe em que ambas as funções podemos passar outros parâmetros, que serão os parâmetros da nossa função callback.
+
+function greeting(x) {
+	console.log(x)
+}
+
+console.log(setInterval(greeting, 2000, 'Hello World!'))
+
+/* Entretanto, como podemos perceber nenhuma destas funções possui uma parada, ou seja, elas continuarão infinitamente e para resolvermos isto basta utilizarmos o clearTimeout ou clearInterval, onde colocaremos as nossas funções dentro de variáveis e a passaremos como parâmetro para a função clearInterval ou clearTimeout */
+
+function greeting(x) {
+	console.log(x)
+}
+
+const welcome = setInterval(greeting, 3000, 'Hello World')
+
+setTimeout(function () {
+	console.log('Encerrando execução')
+	clearInterval(welcome)
+}, 5000)
