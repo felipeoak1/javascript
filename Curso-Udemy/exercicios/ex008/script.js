@@ -27,19 +27,19 @@ let inicio = () => {
     relogio.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 }
 
-let start = () => {
-    setInterval(
+function start () {
+    relogio.style.color = 'black'
+    let l1 = setInterval(
         inicio, 1000
     )
 }
 
-let pause = () => {
-    setTimeout(
-        clearInterval(start), 2
-    )
+function pause () {
+    relogio.style.color = 'red'
+    
 }
 
-let reset = () => {
+function reset () {
     seconds = 0
     minutes = 0
     hours = 0   
