@@ -3,7 +3,7 @@
 // Exemplo de função com setInterval e um contador, onde a cada um segundo será demonstrado um número.
 
 let count = 0
-setIntervar(function () {
+setInterval(function () {
 	console.log(count++)
 }, 1000)
 
