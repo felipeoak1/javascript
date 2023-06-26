@@ -28,6 +28,10 @@ section {
 
 }
 
+h1 {
+    margin-bottom: 10px;
+}
+
 div {
     font-size: 3em;
     font-weight: bolder;
