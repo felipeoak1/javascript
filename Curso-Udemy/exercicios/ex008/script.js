@@ -3,6 +3,7 @@ const iniciar = document.getElementById('iniciar')
 const pausar = document.getElementById('pausar')
 const zerar = document.getElementById('zerar')
 
+let l1;
 let controle;
 let seconds = 0
 let minutes = 0
@@ -13,9 +14,12 @@ function start () {
     if (controle) {
         return
     }
-
-    let inicio = () => {
-
+  
+    clearInterval(l1)
+    
+    l1 = setInterval( 
+        function () {
+            
         if (seconds == 59) {
             seconds = 0
             minutes++
@@ -32,18 +36,14 @@ function start () {
 
         seconds++
         controle = true
+        relogio.style.color = 'black'
         relogio.innerHTML = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
-    }
-
-    relogio.style.color = 'black'
-    let l1 = setInterval(
-        inicio, 1000
-    )
+    }, 1000)
 
     let pause = () => {
+        clearInterval(l1)
         controle = false
         relogio.style.color = 'red'
-        setTimeout(()=>{clearInterval(l1)}, 1)
     }
 
     pausar.addEventListener('click', pause)
