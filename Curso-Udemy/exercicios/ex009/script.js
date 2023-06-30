@@ -16,7 +16,7 @@ function addTaskList() {
     let li = document.createElement('li')    
 
     icon.setAttribute('class', 'material-symbols-outlined')
-    icon.innerHTML = ' delete'
+    icon.innerHTML = 'delete'
     
     button = document.createElement('button')
     button.setAttribute('class', 'botaodelete')
@@ -38,9 +38,3 @@ function addTaskList() {
 function deleteTask() {
     this.parentElement.remove()
 }   
-
-
-
-
-let data = new Date(0)
-console.log(data.getDate().toString())
