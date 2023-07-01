@@ -22,6 +22,9 @@ function addTask() {
     div.appendChild(li)
     div.appendChild(del)
     ul.appendChild(div)
+
+    tasks.focus()
+    tasks.value = ''
     
 }
 
