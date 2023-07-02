@@ -25,7 +25,6 @@ function addTask() {
 
     tasks.focus()
     tasks.value = ''
-    
 }
 
 function deleteTask() {
