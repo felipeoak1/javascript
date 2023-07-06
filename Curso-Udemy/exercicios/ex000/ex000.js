@@ -64,3 +64,10 @@ function numberDifference(n) {
 
 console.log(numberDifference(3))
 
+// Write a JavaScript program to compute the sum of the two given integers. If the two values are the same, then return triple their sum.  
+
+    function sumNumbers(n1=0, n2=0) {
+        return n1 === n2 ? (n1 + n2) * 3 : n1 + n2
+    }
+
+    console.log(sumNumbers(1,2))
