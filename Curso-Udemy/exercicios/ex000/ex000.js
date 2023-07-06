@@ -66,8 +66,24 @@ console.log(numberDifference(3))
 
 // Write a JavaScript program to compute the sum of the two given integers. If the two values are the same, then return triple their sum.  
 
-    function sumNumbers(n1=0, n2=0) {
-        return n1 === n2 ? (n1 + n2) * 3 : n1 + n2
-    }
+function sumNumbers(n1=0, n2=0) {
+    return n1 === n2 ? (n1 + n2) * 3 : n1 + n2
+}
 
-    console.log(sumNumbers(1,2))
+console.log(sumNumbers(1,2))
+
+// Write a JavaScript program to find the largest of three given integers.  
+
+function largestNumber(...num) {
+    return Math.max(...num)
+}
+
+console.log(largestNumber(1, 4, 66))
+
+// Write a JavaScript program to produce a new string that has the first 3 characters in lower case from a given string. If the string length is less than 3 convert all the characters to upper case.  
+
+function editString(str) {
+    return str.length <= 3 ? str.toUpperCase() : `${str.slice(0, 4).toLowerCase()}${str.slice(4, str.length)}`
+}
+
+console.log(editString('Tes'))
