@@ -23,17 +23,17 @@
     form {
         height: 100%;
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
         justify-content: space-between;
+        text-align: center;
     }
 
     form div, form input {
-        width: 30px;
+        width: calc(100% / 3);
     }
 
     section button {
-        height: 30px;
-        
+        height: 30px;        
     }
 
 }
