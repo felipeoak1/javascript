@@ -5,6 +5,7 @@
 
 @media screen and (max-width: 375px) {
     main {
+        background-color: #F0F0F0;
         position: relative;
         height: 100vh;
     }
@@ -15,9 +16,11 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
+        background-color: white;
         height: 80%;
         width: 80%;
         margin: auto;
+        padding: 40px 10px
     }
 
     form {
@@ -29,10 +32,16 @@
     }
 
     form div, form input {
+        height: 30%;
         width: calc(100% / 3);
     }
 
+    form label {
+        display: block;
+    }
+
     #button {
+        height: 30%;
         width: 100%;
         text-align: center;
     }
