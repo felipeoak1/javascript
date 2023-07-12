@@ -13,6 +13,7 @@
 
     <section>
       <form action="" method="GET">
+
         <div>
           <label for="iday">Day</label>
           <input type="number" name="Day" id="iday" width="10px">
@@ -30,17 +31,18 @@
 
         <div id="div-button">
           <hr>
-          <button type="button">
+          <button type="button" id="button">
             <img src="assets/images/icon-arrow.svg" alt="" id="img-button">
           </button>
           <hr>
         </div>
+
       </form>
 
       <div id="div-age">
-        <h1>-- years</h1>
-        <h1>-- months</h1>
-        <h1>-- days</h1>
+        <p><span id="yeartext">--</span> years</p>
+        <p>-- months</p>
+        <p>-- days</p>
       </div>
 
     </section>
@@ -50,5 +52,7 @@
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Your Name Here</a>.
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
