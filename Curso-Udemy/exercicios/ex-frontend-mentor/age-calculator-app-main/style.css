@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
@@ -17,46 +25,48 @@
         transform: translate(-50%, -50%);
 
         background-color: white;
+        width: 95%;
         height: 80%;
-        width: 80%;
-        margin: auto;
-        padding: 30px 10px;
-        border-radius: 20px 20px;
+        padding: 20px 10px;
+        border-radius: 20px 20px 20% 20px;
     }
 
     form {
-        height: 18%;
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-content: center;
+
+
+        height: 43%;
         text-align: center;
     }
 
     form div {
         width: calc(100% / 3);
-        height: 100%;
     }
 
     form label {
-        padding: 0px 0px 3px 20px;
+        margin: 0px 0px 5px 12px;
         text-align: left;
         display: block;
     }
 
     form input {
-        height: 30px;
-        width: 55px;
+        height: 40px;
+        width: 80px;
         border: 1px solid rgba(0, 0, 0, 0.253);
-        border-radius: 5px;
+        border-radius: 7px;
     }
 
     hr {
         display: inline-block;
-        width: 95px;   
+        width: 130px;   
     }
 
     #div-button {
         width: 100%;
+        height: 40%;
     }
 
     #img-button {
@@ -67,15 +77,17 @@
     button {
         position: relative;
         bottom: -18px;
-        background-color: #854AFF;
+        background-color: #ffffff;
         border: none;
-        border-radius: 50%;
     }
 
-}
+    #div-age {
+        font-size: 2em;
+        font-weight: 400;
+        font-style: italic;
+        padding-left: calc(42% - 130px);
+        width: 100%;
+        height: 50%;
+    }
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
 }
