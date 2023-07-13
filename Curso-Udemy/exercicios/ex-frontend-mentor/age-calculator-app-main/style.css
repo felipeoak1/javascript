@@ -16,6 +16,7 @@
         background-color: #F0F0F0;
         position: relative;
         height: 100vh;
+        min-width: 375px;
     }
 
     section {
@@ -26,8 +27,8 @@
 
         background-color: white;
         width: 95%;
-        height: 80%;
-        padding: 20px 10px;
+        height: 88%;
+        padding: 40px 10px;
         border-radius: 20px 20px 20% 20px;
     }
 
@@ -35,10 +36,8 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-around;
-        align-content: center;
 
-
-        height: 43%;
+        height: 40%;
         text-align: center;
     }
 
@@ -69,21 +68,33 @@
     }
 
     #div-button {
+        align-self: center;
+        
         width: 100%;
         height: 40%;
-    }
-
-    #img-button {
-        background-color: #854AFF;
-        border-radius: 50%;
     }
     
     button {
         position: relative;
-        bottom: -18px;
-        background-color: #ffffff;
+        background-color: #854AFF;
         border: none;
+        cursor: pointer;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
     }
+
+    #img-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background-color: #854AFF;
+        border-radius: 50%;
+        width: 30px;
+    }
+    
 
     #div-age {
         padding-left: calc(42% - 130px);
@@ -95,6 +106,14 @@
         font-size: 3em;
         font-weight: 800;
         font-style: italic;
+    }
+
+    .resulttext {
+        color: hsl(259, 100%, 65%);
+    }
+
+    footer {
+        background-color: #F0F0F0;
     }
 
 }
