@@ -65,7 +65,7 @@
 
     hr {
         display: inline-block;
-        width: 130px;   
+        width: 120px;   
     }
 
     #div-button {
@@ -83,6 +83,14 @@
         border-radius: 50%;
         width: 60px;
         height: 60px;
+    }
+
+    button:hover {
+        background-color: hsl(0, 0%, 8%);
+    }
+
+    #img-button:hovergit  {
+        background-color: hsl(0, 0%, 8%);
     }
 
     #img-button {
@@ -115,6 +123,7 @@
     }
 
     footer {
+        min-width: 375px;
         background-color: #F0F0F0;
     }
 

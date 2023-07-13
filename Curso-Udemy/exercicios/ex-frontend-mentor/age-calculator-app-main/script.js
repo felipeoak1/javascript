@@ -28,7 +28,6 @@ function calcMonths() {
     }
 
     monthText.innerHTML = `${monthAge.toString().padStart(2, '0')}`
-    
 }
 
 function calcDays() {
