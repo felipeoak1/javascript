@@ -58,6 +58,7 @@
     form input {
         height: 40px;
         width: 80px;
+        padding: 10px;
         border: 1px solid rgba(0, 0, 0, 0.253);
         border-radius: 7px;
     }
@@ -80,8 +81,8 @@
         border: none;
         cursor: pointer;
         border-radius: 50%;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     #img-button {
@@ -92,7 +93,8 @@
 
         background-color: #854AFF;
         border-radius: 50%;
-        width: 30px;
+        width: 28px;
+        height: 28px;
     }
     
 
