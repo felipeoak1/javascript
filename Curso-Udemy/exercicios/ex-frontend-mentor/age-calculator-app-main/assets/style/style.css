@@ -1,0 +1,134 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+main {
+    background-color: #F0F0F0;
+    position: relative;
+    height: 100vh;
+    min-width: 375px;
+}
+
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    height: 70%;
+    padding: 40px 10px;
+    border-radius: 20px 20px 20% 20px;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    height: 40%;
+    text-align: center;
+}
+
+form div {
+    width: calc(100% / 3);
+}
+
+form label {
+    font-size: 0.9em;
+    color: hsl(0, 1%, 44%);
+    letter-spacing: 3px;
+    margin: 0px 0px 5px 12px;
+    text-align: left;
+    display: block;
+    text-transform: uppercase;
+}
+
+form input {
+    height: 40px;
+    width: 80px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.253);
+    border-radius: 7px;
+}
+
+form input:hover {
+    border: 1px solid hsl(259, 100%, 65%);
+}
+
+hr {
+    display: inline-block;
+    width: 120px;   
+}
+
+#div-button {
+    align-self: center;
+    
+    width: 100%;
+    height: 40%;
+}
+
+button {
+    position: relative;
+    background-color: #854AFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 8%);
+}
+
+#img-button:hovergit  {
+    background-color: hsl(0, 0%, 8%);
+}
+
+#img-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #854AFF;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+
+#div-age {
+    padding-left: calc(42% - 130px);
+    width: 100%;
+    height: 50%;
+}
+
+p {
+    font-size: 3em;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.resulttext {
+    color: hsl(259, 100%, 65%);
+}
+
+footer {
+    min-width: 375px;
+    background-color: #F0F0F0;
+}
