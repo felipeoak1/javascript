@@ -10,6 +10,20 @@ let year = document.getElementById("iyear")
 let button = document.getElementById("button")
 button.addEventListener('click', calcAge)
 
+function checkWidth() {
+
+    if (window.innerWidth > 375) {
+        let hr = document.getElementById("hr2")
+        hr.style.display = 'none'
+        hrActive = false
+    } else {
+        if (!hrActive) {
+            let hr = document.getElementById("hr2")
+            hr.style.display = 'inline-block'
+            hrActive = true
+        }
+    }
+}
 
 function calcAge() {
     let yearText = document.getElementById("yeartext")

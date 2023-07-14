@@ -8,24 +8,24 @@
   <link rel="stylesheet" href="./assets/style/responsive.css">
   <title>Frontend Mentor | Age calculator app</title>
 </head>
-<body>
+<body onresize="checkWidth()">
   
     <main>
 
       <section>
         <form action="" method="GET">
 
-          <div>
+          <div id="divday">
             <label for="iday">Day</label>
             <input type="number" name="Day" id="iday" placeholder="DD">
           </div>
 
-          <div>
+          <div id="divmonth">
             <label for="imonth">Month</label>
             <input type="number" name="Month" placeholder="MM" id="imonth" required>
           </div>
 
-          <div>
+          <div id="divyear">
             <label for="iyear">Year</label>
             <input type="number" name="Year" placeholder="YYYY" id="iyear" required>
           </div>
