@@ -12,10 +12,17 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
 main {
     background-color: #F0F0F0;
     position: relative;
     height: 100vh;
+    width: 100vw;
 }
 
 section {
@@ -36,9 +43,8 @@ form {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-
+    gap: 5px;
     height: 40%;
-    width: 100%;
     min-width: 500px;
     text-align: center;
 }
@@ -54,10 +60,19 @@ form div {
 form label {
     display: block;
     font-size: 0.9em;
+    width: 60px;
     letter-spacing: 3px;
     color: hsl(0, 1%, 44%);
     margin: 0px 0px 5px 0%;
     text-transform: uppercase;
+}
+
+#imonthlabel {
+    width: 90px;
+}
+
+#iyearlabel {
+    width: 70px;
 }
 
 form input {
@@ -113,13 +128,13 @@ button {
 
 
 #div-age {
-    padding-left: calc(42% - 130px);
+    padding-left: 7%;
     width: 100%;
     height: 50%;
 }
 
 p {
-    font-size: 3em;
+    font-size: 3.2em;
     font-weight: 800;
     font-style: italic;
 }
