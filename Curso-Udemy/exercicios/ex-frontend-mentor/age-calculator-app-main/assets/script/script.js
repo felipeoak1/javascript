@@ -7,8 +7,22 @@ let hrActive;
 let day = document.getElementById("iday")
 let month = document.getElementById("imonth")
 let year = document.getElementById("iyear")
+
 let button = document.getElementById("button")
+let imgButton = document.getElementById("img-button")
 button.addEventListener('click', calcAge)
+button.addEventListener("mouseenter", changeColor)
+button.addEventListener("mouseleave", colorButton)
+
+function colorButton() {
+    imgButton.style.backgroundColor = 'hsl(259, 100%, 65%)'
+    button.style.backgroundColor = 'hsl(259, 100%, 65%)'
+}
+
+function changeColor() {
+    imgButton.style.backgroundColor = 'black'
+    button.style.backgroundColor = 'black'
+}
 
 function checkWidth() {
 

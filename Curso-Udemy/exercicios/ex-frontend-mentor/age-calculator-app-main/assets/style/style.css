@@ -40,6 +40,7 @@ form {
     height: 40%;
     width: 100%;
     min-width: 500px;
+    text-align: center;
 }
 
 form div {
@@ -96,14 +97,6 @@ button {
     border-radius: 50%;
     width: 60px;
     height: 60px;
-}
-
-button:hover {
-    background-color: hsl(0, 0%, 8%);
-}
-
-#img-button:hovergit  {
-    background-color: hsl(0, 0%, 8%);
 }
 
 #img-button {
