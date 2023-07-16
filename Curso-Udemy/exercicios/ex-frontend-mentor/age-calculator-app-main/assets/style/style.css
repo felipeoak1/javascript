@@ -9,9 +9,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
-
 html, body {
     width: 100vw;
     height: 100vh;
@@ -34,6 +31,7 @@ section {
     background-color: white;
     width: 80%;
     max-width: 600px;
+    min-width: 510px;
     height: auto;
     padding: 40px 10px;
     border-radius: 20px 20px 20% 20px;
@@ -44,8 +42,9 @@ form {
     flex-flow: row wrap;
     justify-content: flex-start;
     gap: 5px;
+
     height: 40%;
-    min-width: 500px;
+    min-width: 510px;
     text-align: center;
 }
 
@@ -59,12 +58,12 @@ form div {
 
 form label {
     display: block;
-    font-size: 0.9em;
-    width: 60px;
-    letter-spacing: 3px;
     color: hsl(0, 1%, 44%);
-    margin: 0px 0px 5px 0%;
+    font-size: 0.9em;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    width: 60px;
+    margin: 0px 0px 5px 0%;
 }
 
 #imonthlabel {
@@ -126,7 +125,6 @@ button {
     height: 28px;
 }
 
-
 #div-age {
     padding-left: 7%;
     width: 100%;
@@ -146,3 +144,6 @@ p {
 footer {
     background-color: #F0F0F0;
 }
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
