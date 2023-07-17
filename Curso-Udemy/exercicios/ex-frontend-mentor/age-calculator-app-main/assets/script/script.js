@@ -43,8 +43,37 @@ function calcAge() {
     let yearText = document.getElementById("yeartext")
     let age = currentYear - Number(year.value)
     yearText.innerHTML = age
+
+    checkInputs()
     calcMonths()
     calcDays()
+}
+
+function checkInputs() {
+    let list = [day, month, year]
+
+    list.map(
+        (e)=>{ 
+            if (e.value.length == 0) { 
+                console.log(e.id)
+                e.style.border = 'solid 1px hsl(0, 100%, 67%)'
+                Array.from(document.getElementsByTagName("label")).map((e)=>{
+                    let siblings = e.parentNode.childNodes
+                    if (siblings[3].value == 0) {
+                        e.style.color = 'red'
+                    }
+                })
+            }}
+        )
+
+    setTimeout((e) => {
+        list.map((e)=>{
+            if (e.value.length == 0) {
+                e.style.border = "solid 1px rgba(0, 0, 0, 0.253)"
+                Array.from(document.getElementsByTagName('label')).map((e)=>{e.style.color = 'hsl(0, 1%, 44%)'})
+            }})
+    }, 3000);
+
 }
 
 function calcMonths() {
