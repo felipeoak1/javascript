@@ -10,7 +10,7 @@ let year = document.getElementById("iyear")
 
 let button = document.getElementById("button")
 let imgButton = document.getElementById("img-button")
-button.addEventListener('click', calcAge)
+button.addEventListener('click', checkInputs)
 button.addEventListener("mouseenter", changeColor)
 button.addEventListener("mouseleave", colorButton)
 
@@ -44,7 +44,6 @@ function calcAge() {
     let age = currentYear - Number(year.value)
     yearText.innerHTML = age
 
-    checkInputs()
     calcMonths()
     calcDays()
 }
@@ -55,25 +54,37 @@ function checkInputs() {
     list.map(
         (e)=>{ 
             if (e.value.length == 0) { 
-                console.log(e.id)
+                if (e.parentElement.childNodes.length == 5){
+                    let p = document.createElement('p')
+                    p.setAttribute('class', 'pcheckinput')
+                    e.parentElement.appendChild(p).innerHTML = 'This field is required'
+                } else {
+                    e.parentElement.childNodes[5].innerHTML = 'This field is required'
+                }
+
                 e.style.border = 'solid 1px hsl(0, 100%, 67%)'
                 Array.from(document.getElementsByTagName("label")).map((e)=>{
                     let siblings = e.parentNode.childNodes
                     if (siblings[3].value == 0) {
-                        e.style.color = 'red'
+                        e.style.color = 'hsl(0, 100%, 67%)'
+                        }
+                    })
+                } else {
+                    for (c of e.parentElement.parentElement) {
+                        console.log(c)
                     }
-                })
-            }}
+                }
+            }
         )
 
     setTimeout((e) => {
         list.map((e)=>{
             if (e.value.length == 0) {
+                e.parentElement.childNodes[5].innerHTML = ' '
                 e.style.border = "solid 1px rgba(0, 0, 0, 0.253)"
                 Array.from(document.getElementsByTagName('label')).map((e)=>{e.style.color = 'hsl(0, 1%, 44%)'})
             }})
-    }, 3000);
-
+    }, 1500);
 }
 
 function calcMonths() {

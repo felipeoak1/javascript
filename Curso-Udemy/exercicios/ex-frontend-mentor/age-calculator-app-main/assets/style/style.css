@@ -87,6 +87,13 @@ form input:hover {
     border: 1px solid hsl(259, 100%, 65%);
 }
 
+.pcheckinput {
+    font-size: .6em;
+    font-weight: 400;
+    color: hsl(0, 100%, 67%);
+    margin-top: 5px;
+}
+
 hr {
     display: inline-block;
     width: 75%;  
