@@ -53,6 +53,10 @@ function checkInputs() {
 
     list.map(
         (e)=>{ 
+            // Block user inputs
+            e.setAttribute('disabled', 'desabilitado')
+            
+            // Checking if p element already exists, if not created it and set a wrong text for warning.
             if (e.value.length == 0) { 
                 if (e.parentElement.childNodes.length == 5){
                     let p = document.createElement('p')
@@ -62,7 +66,10 @@ function checkInputs() {
                     e.parentElement.childNodes[5].innerHTML = 'This field is required'
                 }
 
+                // Changing border color.
                 e.style.border = 'solid 1px hsl(0, 100%, 67%)'
+
+                // Changing label color to red if the input value equal zero
                 Array.from(document.getElementsByTagName("label")).map((e)=>{
                     let siblings = e.parentNode.childNodes
                     if (siblings[3].value == 0) {
@@ -70,19 +77,30 @@ function checkInputs() {
                         }
                     })
                 } else {
+                    let count = 0
+                    
                     for (c of e.parentElement.parentElement) {
-                        console.log(c)
+                        if (c.value.length > 0){
+                            count++
+                        }
+
+                        if (count == 3) {
+                            calcAge()
+                        }
+
                     }
                 }
             }
         )
 
+    // Back all configurations to normal after one second and half
     setTimeout((e) => {
         list.map((e)=>{
             if (e.value.length == 0) {
                 e.parentElement.childNodes[5].innerHTML = ' '
                 e.style.border = "solid 1px rgba(0, 0, 0, 0.253)"
                 Array.from(document.getElementsByTagName('label')).map((e)=>{e.style.color = 'hsl(0, 1%, 44%)'})
+                e.removeAttribute('disabled')
             }})
     }, 1500);
 }
