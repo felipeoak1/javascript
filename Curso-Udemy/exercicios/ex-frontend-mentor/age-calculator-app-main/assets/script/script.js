@@ -96,11 +96,11 @@ function checkInputs() {
     // Back all configurations to normal after one second and half
     setTimeout((e) => {
         list.map((e)=>{
+            e.removeAttribute('disabled')
             if (e.value.length == 0) {
                 e.parentElement.childNodes[5].innerHTML = ' '
                 e.style.border = "solid 1px rgba(0, 0, 0, 0.253)"
                 Array.from(document.getElementsByTagName('label')).map((e)=>{e.style.color = 'hsl(0, 1%, 44%)'})
-                e.removeAttribute('disabled')
             }})
     }, 1500);
 }
