@@ -3,10 +3,13 @@ let currentYear = date.getFullYear()
 let currentMonth = date.getMonth()
 let currentDay = date.getDate()
 let hrActive;
+let control = true
 
 let day = document.getElementById("iday")
 let month = document.getElementById("imonth")
 let year = document.getElementById("iyear")
+
+let list = [day, month, year]
 
 let button = document.getElementById("button")
 let imgButton = document.getElementById("img-button")
@@ -48,14 +51,34 @@ function calcAge() {
     calcDays()
 }
 
+function checkNumberInputs(element, number) {
+    console.log(element)
+    if (Number(element.value) > number) {
+        if (element.parentElement.childNodes.length == 5){
+            let p = document.createElement('p')
+            p.setAttribute('class', 'pcheckinput')
+            element.parentElement.appendChild(p).innerHTML = `Must be a valid ${element.name}.`
+        } else {
+            element.parentElement.childNodes[5].innerHTML = `Must be a valid ${element.name}.`
+        } 
+
+        element.style.border = 'solid 1px hsl(0, 100%, 67%)'
+        document.getElementById(`i${element.name.toString().toLowerCase()}label`).style.color = 'hsl(0, 100%, 67%)'
+        control = false
+    }
+}
+
 function checkInputs() {
-    let list = [day, month, year]
+
+    checkNumberInputs(day, 31)
+    checkNumberInputs(month, 12)
+    checkNumberInputs(year, date.getFullYear())
 
     list.map(
         (e)=>{ 
             // Block user inputs
             e.setAttribute('disabled', 'desabilitado')
-            
+
             // Checking if p element already exists, if not created it and set a wrong text for warning.
             if (e.value.length == 0) { 
                 if (e.parentElement.childNodes.length == 5){
@@ -84,7 +107,7 @@ function checkInputs() {
                             count++
                         }
 
-                        if (count == 3) {
+                        if (count == 3 && control) {
                             calcAge()
                         }
 
@@ -97,11 +120,11 @@ function checkInputs() {
     setTimeout((e) => {
         list.map((e)=>{
             e.removeAttribute('disabled')
-            if (e.value.length == 0) {
-                e.parentElement.childNodes[5].innerHTML = ' '
-                e.style.border = "solid 1px rgba(0, 0, 0, 0.253)"
-                Array.from(document.getElementsByTagName('label')).map((e)=>{e.style.color = 'hsl(0, 1%, 44%)'})
-            }})
+            e.parentElement.childNodes[5].innerHTML = ' '
+            e.style.border = "solid 1px rgba(0, 0, 0, 0.253)"
+            Array.from(document.getElementsByTagName('label')).map((e)=>{e.style.color = 'hsl(0, 1%, 44%)'})
+            control = true
+            })
     }, 1500);
 }
 
