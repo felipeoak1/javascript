@@ -2,7 +2,6 @@
 let date = new Date()
 let currentYear = date.getFullYear()
 let currentMonth = date.getMonth()
-let currentDay = date.getDate()
 
 // Control variables
 let yearChoosed;
@@ -69,6 +68,13 @@ function checkNumberInputs(element, number) {
 
     if (element.name == "Year") {
         yearChoosed = Number(element.value)
+    }
+
+    if (element.name == "Day") {
+        let dateteste = new Date(Number(year.value), Number(month.value), 0 )
+        if (Number(element.value) > dateteste.getDate()) {
+            NumberInputs(element, 'Invalid day')
+        }
     }
 
     if (element.name == "Month" && yearChoosed == date.getFullYear()) {
@@ -147,7 +153,7 @@ function checkInputs() {
 
 function calcAge() {
     let yearText = document.getElementById("yeartext")
-    let age = currentYear - Number(year.value)
+    let age = date.getFullYear() - Number(year.value)
     yearText.innerHTML = age
 
     calcMonths()
@@ -175,3 +181,4 @@ function calcDays() {
 
     dayText.innerHTML = `${dayNow.toString().padStart(2, '0')}`
 }
+
