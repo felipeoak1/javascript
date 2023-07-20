@@ -18,8 +18,14 @@ let list = [day, month, year]
 let button = document.getElementById("button")
 let imgButton = document.getElementById("img-button")
 button.addEventListener('click', checkInputs)
-button.addEventListener("mouseenter", changeColor)
-button.addEventListener("mouseleave", mainColor)
+
+if (window.innerWidth > 375) {
+    button.addEventListener("mouseenter", changeColor)
+    button.addEventListener("mouseleave", mainColor)
+} else {
+    button.addEventListener("touchstart", mainColor)
+}
+
 
 function changeColor() {
     imgButton.style.backgroundColor = 'black'
