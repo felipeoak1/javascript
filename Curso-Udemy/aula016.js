@@ -69,5 +69,20 @@ for (let c of g4) {
 }
 
 function* geradora5() {
-    yield
+    yield function() {
+        console.log('Vim do yield1')
+    }
+
+    yield function() {
+        console.log("Vim do yield2")
+    }
 }
+
+const g5 = geradora5()
+g5.next().value()
+g5.next().value()
+
+const func1 = g5.next().value()
+const func2 = g5.next().value()
+func1()
+func2()
