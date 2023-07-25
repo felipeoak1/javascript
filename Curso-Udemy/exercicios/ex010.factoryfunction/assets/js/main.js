@@ -31,6 +31,7 @@ function criaCalculadora() {
       let conta = this.display.value;
 
       try {
+        // Eval não é recomendado.
         conta = eval(conta);
 
         if(!conta) {
