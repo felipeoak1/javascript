@@ -12,9 +12,6 @@ const pessoas = [
                 {nome: "Wallace", idade: 47}
             ]
 
-console.log(pessoas[0].nome[pessoas[0].nome.length - 1])
-
-
 // Retorne os números maiores que 10.
 console.log(numeros.filter(e=>{
     return e > 10 
