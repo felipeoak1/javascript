@@ -1,7 +1,8 @@
 // Map
 
 /* Map diferentemente do filter irá realizar alterações nos elementos do array e retornará um array exatamente com o mesmo tamanho do original. 
-Obs.: Map altera o array original, caso não seja essa intenção precisamos criar um novo objeto e retorna-lo */
+Obs.: Map altera o array original, caso não seja essa intenção precisamos criar um novo objeto e retorna-lo.
+Obs.: A função é aplicada para cada elemento do array, ou seja, realiza a função em um elemento, retorna e vai para o próximo elemento.*/
 
 const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27]
 const pessoas = [
