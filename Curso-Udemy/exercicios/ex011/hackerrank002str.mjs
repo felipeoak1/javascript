@@ -1,5 +1,3 @@
-
-
 let string_test = `thmqrdjxtwvvxqbdbh
 mkshajwlkignsmmlhu
 kzdqhotbnqkfuafu
