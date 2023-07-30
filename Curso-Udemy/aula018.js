@@ -1,14 +1,10 @@
 // Filter
 
-/* Filter serve para literalmente filtrar um objeto, retornando um array com a mesma quantidade de elementos ou menos. */
+/* Filter serve para literalmente filtrar um objeto e não alterar o elemento. Retornando um array com a mesma quantidade de elementos ou menos. */
 
-// Retorne os números maiores que 10.
 const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27]
-// Retorne as pessoas que tem o nome com 5 letras ou mais.
-// Retorne as pessoas com mais de 50 anos.
-// Retorne as pessoas cuja nome termina com a letra "a".
 const pessoas = [
-                {nome: "Felipe", idade:62}, 
+                {nome: "Bruno", idade:62}, 
                 {nome: "Maria", idade: 23},
                 {nome: "Eduardo", idade: 55},
                 {nome: "Letícia", idade: 19},
@@ -16,14 +12,25 @@ const pessoas = [
                 {nome: "Wallace", idade: 47}
             ]
 
+console.log(pessoas[0].nome[pessoas[0].nome.length - 1])
 
+
+// Retorne os números maiores que 10.
 console.log(numeros.filter(e=>{
     return e > 10 
 }))
 
+// Retorne as pessoas que tem o nome com 5 letras ou mais.
+console.log(pessoas.filter(e=>e.nome.length >= 5))
+
+// Retorne as pessoas com mais de 50 anos.
 console.log(pessoas.filter(e=>{
-    return e.nome.length > 5
+    return e.idade > 50
 }))
 
-
+// Retorne as pessoas cuja nome termina com a letra "a".
+console.log(pessoas.filter(e=>{
+    // e.nome[e.nome.length - 1] == "a"
+    return e.nome.toLowerCase().endsWith("a")
+}))
 
