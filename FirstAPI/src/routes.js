@@ -6,4 +6,9 @@ module.exports = [
         method: "GET",
         handler: UserController.listUsers,
     },
+    {
+        endpoint: '/produtos',
+        method: 'GET',
+        handler: UserController.listUsers
+    },
 ]
