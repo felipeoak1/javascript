@@ -38,3 +38,4 @@ console.log(p1)
 console.log(Object.keys(p1))
 console.log(Object.values(p1))
 
+console.log("Oi")
