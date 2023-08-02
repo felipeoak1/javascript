@@ -1,14 +1,15 @@
-const UserController = require("./controllers/UserController")
+const UserController = require('../controllers/userController')
 
 module.exports = [
     {
-        endpoint: '/users',
-        method: "GET",
+        'endpoint': '/users',
+        'method': 'GET',
         handler: UserController.listUsers,
     },
+
     {
-        endpoint: '/produtos',
-        method: 'GET',
-        handler: UserController.listUsers
+        'endpoint': '/users/:id',
+        'method': 'GET',
+        handler: UserController.geyUserById,
     },
 ]
