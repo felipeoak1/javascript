@@ -6,8 +6,9 @@ const server = http.createServer((request, response)=>{
     console.log(`Request method: ${request.method} | Request Endpoint: ${request.url}`)
     
     const parsedUrl = new URL(`http://localhost:3000${request.url}`)
-    let { pathname } = parsedUrl
+
     let id = null;
+    let { pathname } = parsedUrl
     const splitEndPoint = pathname.split('/').filter(Boolean)
     
     if (splitEndPoint.length > 1) {
@@ -17,14 +18,18 @@ const server = http.createServer((request, response)=>{
     
     const route = routes.find((routeObj)=>{return routeObj.endpoint === pathname && routeObj.method === request.method})
     
+    response.send = (statusCode, body)=>{
+        response.writeHead(statusCode, {'content-type': 'application/json'})
+        response.end(body)
+    }
+
     if (route){
         request.params = { id }
         request.query = Object.fromEntries(parsedUrl.searchParams)
-        route.handler(request, response)
-    } else {
-        response.writeHead(404, {'content-type':'text/html'})
-        response.end(`Cannot acess ${request.method} ${pathname}`)
-    }   
+        return route.handler(request, response)
+    } 
+    
+    response.send(404, `Cannot acess ${request.method} ${pathname}`)  
 })
 
 server.listen(3000, ()=>{console.log("Server start at http://localhost:3000")}) 

@@ -12,23 +12,41 @@ const users = require('../src/mocks/users')
             return p.id > s.id ? 1 : -1
         })
 
-        response.writeHead(200, {'content-type': 'application/json'})
-        response.end(JSON.stringify(sortedUsers))
+        response.send(200, JSON.stringify(sortedUsers))
     },
 
-    geyUserById(request, response){
+    getUserById(request, response){
         const { id } = request.params
         const userById = users.find((user) => {
            return user.id === Number(id)
         })
 
         if (!userById) {
-            response.writeHead(400, {'content-type': 'application/json'})
-            response.end(JSON.stringify({erro:`User not found`}))
-        }else {
-            response.writeHead(200, {'content-type': 'application/json'})
-            response.end(JSON.stringify({userById}))
+            return response.send(400, JSON.stringify({erro:`User not found`}))
         }
+        
+        response.send(200, JSON.stringify({userById}) )
+    },
+
+    createUser(request, response) {
+        let body = ''
+        request.on('data', (chunk) => {
+            body += chunk
+        })
+
+        request.on('end', ()=>{
+            body = JSON.parse(body)
+            console.log(body)
+            const lastUserId = users[users.length - 1].id
+            const newUser = {
+                id: lastUserId + 1,
+                name: body.nome
+            } 
+
+            users.push(newUser)
+
+            response.send(200, JSON.stringify(newUser))
+        })
 
     }
  }
