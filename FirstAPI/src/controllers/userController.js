@@ -1,6 +1,5 @@
 //Regra de negócios da aplicação.
-const users = require('../src/mocks/users')
-
+const users = require('../mocks/users')
 
  module.exports = {
      listUsers(request, response){
@@ -29,24 +28,15 @@ const users = require('../src/mocks/users')
     },
 
     createUser(request, response) {
-        let body = ''
-        request.on('data', (chunk) => {
-            body += chunk
-        })
+        const { body } = request
+        const lastUserId = users[users.length - 1].id
+        const newUser = {
+            id: lastUserId + 1,
+            name: body.nome
+        } 
 
-        request.on('end', ()=>{
-            body = JSON.parse(body)
-            console.log(body)
-            const lastUserId = users[users.length - 1].id
-            const newUser = {
-                id: lastUserId + 1,
-                name: body.nome
-            } 
+        users.push(newUser)
 
-            users.push(newUser)
-
-            response.send(200, JSON.stringify(newUser))
-        })
-
+        response.send(200, JSON.stringify(newUser))
     }
  }
