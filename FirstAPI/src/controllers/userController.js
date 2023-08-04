@@ -1,5 +1,5 @@
 //Regra de negócios da aplicação.
-const users = require('../mocks/users')
+let users = require('../mocks/users')
 
  module.exports = {
      listUsers(request, response){
@@ -38,5 +38,38 @@ const users = require('../mocks/users')
         users.push(newUser)
 
         response.send(200, JSON.stringify(newUser))
+    },
+    
+    updateUser(request, response) {
+        let { id }  = request.params
+        const { name }  = request.body
+
+        id = Number(id)
+
+        const userExists = users.find((user) => {return user.id === id})
+        console.log(userExists)
+        
+        if (!userExists) {
+            return response.send(400, JSON.stringify({error: "User not found"}))
+        }
+        users = users.map((user) => {
+            if (user.id === id ){
+                return {
+                    id,
+                    name,
+                }
+            }
+            
+            return user
+        })
+        response.send(200, JSON.stringify({id, name}))
+    }, 
+
+    deleteUser(request, response) {
+        let { id }  = request.params
+        id = Number(id)
+
+        users.filter((user)=>{return user.id !== id })
+        response(200, JSON.stringify({}))
     }
  }
