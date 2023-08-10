@@ -26,7 +26,7 @@ module.exports = [
     },
 
     {
-        'endpoint': '/users',
+        'endpoint': '/users/:id',
         'method': 'DELETE',
         handler: UserController.deleteUser,
     },

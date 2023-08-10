@@ -69,7 +69,7 @@ let users = require('../mocks/users')
         let { id }  = request.params
         id = Number(id)
 
-        users.filter((user)=>{return user.id !== id })
-        response(200, JSON.stringify({}))
+        users = users.filter((user)=>{return user.id !== id })
+        response.send(200, JSON.stringify({'deleted':true}))
     }
  }
