@@ -14,9 +14,10 @@ export default function Post(props){
 
 }
 
+// Tipagem das propriedades.
 Post.propTypes = {
-    likes: PropTypes.number.isRequired,  
-    // Caso nenhum argumento seja passado para o método shape, ele só indicará que ele requer um objeto, mas sem se importar com os valores que estão dentro do objeto.
+    likes: PropTypes.number.isRequired,
+    // O método shape serve para indicar que o objeto esperado é um object, caso nenhum valor seja passado ele só se importará em receber um object, ignorando o tipo das propriedades deste objeto.
     post: PropTypes.shape({
         title: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
