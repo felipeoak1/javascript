@@ -12,13 +12,31 @@ function App(){
         </Header>
 
         <hr />
-        <Post // Melhorar a visibilidade do nosso código.
-            title = {titulo01}
-            subtitle = 'Subtítulo da notícia 01'
+        <Post
+            likes = {3}
+            post = {{
+                    title: titulo01,
+                    subtitle: 'Subtítulo da notícia 01'
+                }}
         />
-        <Post title = 'Título da notícia 02' subtitle = 'Subtítulo da notícia 02'/>
-        <Post title = 'Título da notícia 03' subtitle = 'Subtítulo da notícia 03'/>
-        <Post title = 'Título da notícia 04' subtitle = 'Subtítulo da notícia 04'/>
+
+        <Post
+            likes = {10}
+            post = {{
+                    title: titulo01,
+                    subtitle: 'Subtítulo da notícia 02'
+                }}
+        />
+
+        <Post
+            likes={50}
+            post = {{
+                    title: titulo01,
+                    subtitle: 'Subtítulo da notícia 03'
+                }}
+        />
+
+        {/* <Post title = 'Título da notícia 04' subtitle = 'Subtítulo da notícia 04'/> */}
     </>
 }
 

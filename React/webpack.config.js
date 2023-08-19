@@ -5,6 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const path = require('path') // Identifica o sistema operacional e corrige o caminho relativo que foi passado para as configurações daquele sistema operacional.
 
 module.exports = {
+    mode: "development",
     entry: path.resolve(__dirname, 'src', 'index.js'), // Aqui vai o arquivo de inicialização da nossa aplicação React, basicamente o arquivo que está utilizando o ReactDOM.render.
     output: {
         path: path.resolve(__dirname, 'build'), // Pasta onde será salvo o bundle da nossa aplicação.
