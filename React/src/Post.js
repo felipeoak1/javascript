@@ -1,12 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import PostHeader from './PostHeader'
 
 export default function Post(props){
+    if (props.post.read) {
+        return <h2>{props.post.title} já foi lido.</h2>
+    }
+
     // props.title = 'Jornal' <-- Não é possível sobrescrever props, todas as alterações são feitas no componente pai.
+
     return <>
         <article>
-            <strong>{props.post.title}</strong><br/>
-            <button onClick={()=>props.onRemove(props.post.title)}>Remover</button>
+            <PostHeader
+                onRemove={props.onRemove}
+                post = {{
+                    id: props.post.id,
+                    title: props.post.title,
+                    read: props.post.read,
+                }}
+            />
             <small>{props.post.subtitle}</small><br/>
             <small>Média:{props.post.likes / 2}</small>
         </article>    
@@ -27,7 +39,3 @@ Post.propTypes = {
         read: PropTypes.bool.isRequired,
     }).isRequired,
 }
-
-
-
-
