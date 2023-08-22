@@ -27,6 +27,20 @@ module.exports = {
                 exclude: /node-modules/,
                 use:'babel-loader',
             },
+
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader', 
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true
+                        }
+                    },
+                    'sass-loader',
+                ] // Ordem de declaração impacta no resultado.
+            }
         ]
     },
 

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import PostHeader from './PostHeader'
+import styles from './Post.scss'
+
 
 export default function Post(props){
     if (props.post.read) {
@@ -9,8 +11,7 @@ export default function Post(props){
 
     // props.title = 'Jornal' <-- Não é possível sobrescrever props, todas as alterações são feitas no componente pai.
 
-    return <>
-        <article>
+    return  <article className={props.post.removed ? styles.postDeleted : styles.post}>
             <PostHeader
                 onRemove={props.onRemove}
                 post = {{
@@ -22,8 +23,6 @@ export default function Post(props){
             <small>{props.post.subtitle}</small><br/>
             <small>Média:{props.post.likes / 2}</small>
         </article>    
-        <br/>
-    </>
 
 }
 
@@ -37,5 +36,6 @@ Post.propTypes = {
         title: PropTypes.string.isRequired,
         subtitle: PropTypes.string.isRequired,
         read: PropTypes.bool.isRequired,
+        removed: PropTypes.bool.isRequired,
     }).isRequired,
 }
