@@ -21,7 +21,7 @@ function App() {
   }, [theme])
 
   return (
-    <Context.Provider value={handleChangeColor}>
+    <Context.Provider value={{handleChangeColor, currentTheme}}>
       <ThemeProvider theme={themes[currentTheme]}>
         <GlobalStyle />
         <Layout />
