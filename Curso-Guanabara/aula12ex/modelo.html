@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hora do Dia</h1>
+    <section>
+        <h2 id="horas"></h2>
+        <div id="imagem"></div>
+    </section>
+    <footer>
+        <p>@CursoemVídeo</p>
+    </footer>
+
+    <script>
+        var data = new Date
+        var hour = 14
+        var phoras = window.document.getElementById('horas')
+        var div = window.document.getElementById("imagem")
+        phoras.innerHTML = `Agora são ${hour} hora(s).`
+
+        if (hour <= 12) {
+            div.innerHTML = `<img src="img/pexels-photo-1208734.webp" alt="">`
+        } else if (hour > 12 && hour < 18) {
+            window.document.body.style.color = "white"
+            phoras.style.color = "black"
+            window.document.body.style.background = '#AC7B65'
+            div.innerHTML = '<img src="img/pexels-george-desipris-858241.jpg" alt="">'
+        } else {
+            window.document.body.style.color = 'white'
+            phoras.style.color = 'black'
+            window.document.body.style.background = '#494A4B'
+            div.innerHTML = '<img src="img/pexels-pixabay-414144.jpg" alt="">'
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    background-color: #F0F0F0;
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    width: 100%;
+}
+
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: white;
+    width: 80%;
+    max-width: 600px;
+    min-width: 510px;
+    height: auto;
+    padding: 40px 10px;
+    border-radius: 20px 20px 20% 20px;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap: 5px;
+
+    height: 40%;
+    min-width: 510px;
+    text-align: center;
+}
+
+form div {
+    width: calc(60% / 3);
+}
+
+#divday {
+    margin-left: 30px;
+}
+
+form label {
+    display: block;
+    color: hsl(0, 1%, 44%);
+    font-size: 0.9em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    width: 60px;
+    margin: 0px 0px 5px 0%;
+}
+
+#imonthlabel {
+    width: 90px;
+}
+
+#iyearlabel {
+    width: 70px;
+}
+
+form input {
+    height: 40px;
+    width: 100px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.253);
+    border-radius: 7px;
+}
+
+form input:hover {
+    border: 1px solid hsl(259, 100%, 65%);
+}
+
+.pcheckinput {
+    font-size: .6em;
+    font-weight: 400;
+    color: hsl(0, 100%, 67%);
+    margin-top: 5px;
+}
+
+hr {
+    display: inline-block;
+    width: 75%;  
+    max-width: 600px;
+}
+
+#hr2 {
+    display: none;
+}
+
+#div-button {
+    align-self: center;
+    width: 100%;
+    height: 40%;
+}
+
+button {
+    position: relative;
+    background-color: #854AFF;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+#img-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: #854AFF;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+
+#div-age {
+    padding-left: 7%;
+    width: 100%;
+    height: 50%;
+}
+
+p {
+    font-size: 3.2em;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.resulttext {
+    color: hsl(259, 100%, 65%);
+}
+
+footer {
+    background-color: #F0F0F0;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/style/style.css"> 
+  <link rel="stylesheet" href="./assets/style/responsive.css">
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+<body onresize="checkWidth()">
+  
+    <main>
+      <section>
+        <form action="" method="GET">
+
+          <div id="divday">
+            <label for="iday" id="idaylabel">Day</label>
+            <input type="number" name="Day" id="iday" placeholder="DD">
+          </div>
+
+          <div id="divmonth">
+            <label for="imonth" id="imonthlabel">Month</label>
+            <input type="number" name="Month" placeholder="MM" id="imonth" required>
+          </div>
+
+          <div id="divyear">
+            <label for="iyear" id="iyearlabel">Year</label>
+            <input type="number" name="Year" placeholder="YYYY" id="iyear" required>
+          </div>
+
+          <div id="div-button">
+            <hr>
+            <button type="button" id="button">
+              <img src="assets/images/icon-arrow.svg" alt="" id="img-button">
+            </button>
+            <hr id="hr2">
+          </div>
+
+        </form>
+        
+        <div id="div-age">
+          <p><span class="resulttext" id="yeartext">--</span> years</p>
+          <p><span class="resulttext" id="monthtext">--</span> months</p>
+          <p><span class="resulttext" id="daytext">--</span> days</p>
+        </div>
+
+      </section>
+    
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" rel="external" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/felipeoak1" target="_blank">Felipe Carvalho</a>.
+      </div>
+    </footer>
+
+    <script src="./assets/script/script.js"></script>
+</body>
+</html>
