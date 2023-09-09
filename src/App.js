@@ -1,4 +1,4 @@
-import React, {useState, createContext, useMemo} from 'react';
+import React, {useState, createContext, useMemo, useEffect} from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from './styles/global';
@@ -6,28 +6,50 @@ import Layout from './components/Layout';
 
 import themes from './styles/themes'
 
+import { themeProps } from './styles/themes/common.js';
+
 export const Context = createContext()
 
-function App() {
-  const [theme, setTheme] = useState('dark')
+export default class App extends React.Component {
 
-  function handleChangeColor() {
-    setTheme((prevState)=>prevState == 'dark' ? 'light' : 'dark')
-    console.log(theme)
+  constructor(props){
+    super(props)
+    this.state = {
+      theme: 'light',
+      oiTudoBem: true, 
+    }
   }
 
-  const currentTheme = useMemo(()=>{
-    return theme || themes.dark
-  }, [theme])
+  render() {
+    const { theme } = this.state
 
-  return (
-    <Context.Provider value={{handleChangeColor, currentTheme}}>
-      <ThemeProvider theme={themes[currentTheme]}>
-        <GlobalStyle />
-        <Layout />
-      </ThemeProvider>
-    </Context.Provider>
-  );
+    function handleChangeColor() {
+      return theme === 'dark' ? 'light' : 'dark' 
+    }
+
+    
+    
+    return ( 
+      <Context.Provider value={handleChangeColor}>
+        <ThemeProvider theme={{choosedTheme: themes[theme], themeProps: themeProps}}>
+          <GlobalStyle />
+          <Layout changeColor = {()=>this.setState({theme: theme === 'dark' ? 'light' : 'dark' }) }/>
+        </ThemeProvider>
+      </Context.Provider>
+    );
+  }
+ 
+ 
+  // const [theme, setTheme] = useState('dark')
+
+  // function handleChangeColor() {
+  //   setTheme((prevState)=>prevState == 'dark' ? 'light' : 'dark')
+  //   console.log(theme)
+  // }
+
+  // const currentTheme = useMemo(()=>{
+  //   return theme || themes.dark
+  // }, [theme])
+
+
 };
-
-export default App;

@@ -1,7 +1,7 @@
-import commonStyles from './common';
+import {themeProps} from './common';
 
 export default {
-  ...commonStyles,
+  ...themeProps,
   backgroundColor: '#222',
   textColor: '#fff',
   headerBackgroundColor: '#000',

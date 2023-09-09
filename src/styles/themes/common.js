@@ -1,4 +1,4 @@
-export default {
+export const themeProps = {
   spacing: {
     small: 8,
     medium: 16,

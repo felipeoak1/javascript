@@ -2,8 +2,8 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   body {
-    background: ${props => props.theme.backgroundColor};
-    color: ${props => props.theme.textColor};
+    background: ${({theme}) => theme.choosedTheme.backgroundColor};
+    color: ${({theme}) => theme.choosedTheme.textColor};
     font-family: sans-serif;
   }
 `;
