@@ -5,8 +5,9 @@ import { Container } from './styles';
 import  { Context }  from '../../App'
 
 export default function Header(props) {
-  const currentTheme = 'dark'
-  console.log(props)
+  const currentTheme = props.tema
+  console.log(currentTheme)
+
   return (
     <Container>
       <h1>JStack's Blog</h1>

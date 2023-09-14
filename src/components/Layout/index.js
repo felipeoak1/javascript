@@ -8,9 +8,9 @@ export default function Layout(props) {
 
   return (
     <>
-      <Header  changeColor = {props.changeColor}/>
+      <Header  changeColor = {props.changeColor} tema = {props.tema}/>
       <PostsList />
-      <Footer />
+      <Footer changeColor = {props.changeColor} tema = {props.tema} />
     </>
   );
 }

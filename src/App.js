@@ -26,14 +26,12 @@ export default class App extends React.Component {
     function handleChangeColor() {
       return theme === 'dark' ? 'light' : 'dark' 
     }
-
-    
     
     return ( 
       <Context.Provider value={handleChangeColor}>
         <ThemeProvider theme={{choosedTheme: themes[theme], themeProps: themeProps}}>
           <GlobalStyle />
-          <Layout changeColor = {()=>this.setState({theme: theme === 'dark' ? 'light' : 'dark' }) }/>
+          <Layout changeColor = {()=>this.setState({theme: theme === 'dark' ? 'light' : 'dark' })} tema={theme}/>
         </ThemeProvider>
       </Context.Provider>
     );
