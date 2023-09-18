@@ -1,10 +1,6 @@
-import React, { useContext } from 'react';
-
-import { useTheme } from 'styled-components';
+import React from 'react';
 
 import { Container } from './styles';
-
-import { Context } from '../../App'
 
 export default function Footer(props) {
   return (
