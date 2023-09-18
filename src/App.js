@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ThemeProvider } from 'styled-components';
+
 import GlobalStyle from './styles/global';
 
 import Layout from './components/Layout';
@@ -17,7 +19,12 @@ export default class App extends React.Component {
       oiTudoBem: true
     }}
 
-}
+    this.handleToggleTheme = this.handleToggleTheme.bind(this)
+  }
+
+  handleToggleTheme() {
+    this.setState(prevState => ({theme: prevState.theme === 'dark' ? 'light' : 'dark'}))
+  }
 
   render() {
     let { theme } = this.state
@@ -26,7 +33,7 @@ export default class App extends React.Component {
         <ThemeProvider theme={{choosedTheme: themes[theme] || themes.dark, themeProps: themeProps}}>
           <GlobalStyle />
           <Layout 
-            changeColor = {()=> this.setState({theme: theme === 'dark' ? 'light' : 'dark' })} 
+            changeColor = {this.handleToggleTheme}
             tema={theme}/>
         </ThemeProvider>
     );
