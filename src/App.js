@@ -10,8 +10,10 @@ import themes from './styles/themes'
 
 import { themeProps } from './styles/themes/common.js';
 
+// Todas as classes precisam herdar da React Component
 export default class App extends React.Component {
 
+  // Criação do construtor da classe, com o argumento props que está dentro da classe que herdamos.
   constructor(props) {{ 
     super(props)
     this.state = {
