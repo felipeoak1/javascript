@@ -4,6 +4,7 @@ import { Container } from './styles';
 
 export default class Header extends React.Component {
   render() {
+
     const {changeColor} = this.props
     const {tema} = this.props
     

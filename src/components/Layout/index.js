@@ -8,9 +8,15 @@ export default function Layout(props) {
 
   return (
     <>
-      <Header  changeColor = {props.changeColor} tema = {props.tema}/>
+      <Header  
+        changeColor = {props.changeColor} 
+        tema = {props.tema}
+      />
       <PostsList />
-      <Footer changeColor = {props.changeColor} tema = {props.tema} />
+      <Footer 
+        changeColor = {props.changeColor} 
+        tema = {props.tema} 
+      />
     </>
   );
 }

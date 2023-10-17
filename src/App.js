@@ -34,9 +34,7 @@ export default class App extends React.Component {
     return ( 
         <ThemeProvider theme={{choosedTheme: themes[theme] || themes.dark, themeProps: themeProps}}>
           <GlobalStyle />
-          <Layout 
-            changeColor = {this.handleToggleTheme}
-            tema={theme}/>
+          <Layout changeColor = {this.handleToggleTheme} tema={theme}/>
         </ThemeProvider>
     );
   }
