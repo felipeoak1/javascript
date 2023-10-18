@@ -1,22 +1,30 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import Header from '../Header';
 import PostsList from '../PostsList';
 import Footer from '../Footer';
 
-export default function Layout(props) {
+export default class Layout extends React.Component {
 
-  return (
+  render() {
+    let {tema} = this.props
+    let {changeColor} = this.props
+
+    return (
     <>
       <Header  
-        changeColor = {props.changeColor} 
-        tema = {props.tema}
+        changeColor = {changeColor} 
+        tema = {tema}
       />
-      <PostsList />
+      
+      <PostsList /> 
+      
       <Footer 
-        changeColor = {props.changeColor} 
-        tema = {props.tema} 
+        changeColor = {changeColor} 
+        tema = {tema} 
       />
     </>
-  );
+    )
+  }
 }

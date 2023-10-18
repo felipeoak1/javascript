@@ -22,12 +22,15 @@ export default class App extends React.Component {
 
   // No lugar de utilizarmos a função padrão, onde é necessário alterarmos o this padrão dela, utilizamos a arrow function que não possui um this próprio e utiliza o this do contexto onde ela foi criada.
   handleToggleTheme = () => {
-    this.setState(prevState => ({theme: prevState.theme === 'dark' ? 'light' : 'dark'}))
+    // console.log('handletoggletheme executou')
+    this.setState(prevState=>({theme: prevState.theme == 'dark' ? 'light' : 'dark'}))
+    // Atualização forçada do componente mesmo sem alteração de props ou states.
+    // this.forceUpdate()
   }
 
   render() {
     let { theme } = this.state
-
+    
     return ( 
         <ThemeProvider theme={{choosedTheme: themes[theme] || themes.dark, themeProps: themeProps}}>
           <GlobalStyle />

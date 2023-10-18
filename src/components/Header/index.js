@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import { Container } from './styles';
 
@@ -15,4 +16,9 @@ export default class Header extends React.Component {
       </Container> 
     )
   }
+}
+
+Header.propTypes = {
+  changeColor: PropTypes.func.isRequired,
+  tema: PropTypes.string.isRequired,
 }

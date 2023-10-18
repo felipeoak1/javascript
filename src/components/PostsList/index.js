@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 import { Container } from './styles';
 import Post from './Post';
@@ -9,11 +10,11 @@ export default class PostsList extends React.Component {
   render(){
     return (
       <Container>
-        {posts.map((post) => (
+        {posts.map(element => (
           <Post
-            key={post.id}
-            title={post.title}
-            description={post.description}
+            key={element.id}
+            title={element.title}
+            description={element.description}
           />
         ))}
       </Container>
