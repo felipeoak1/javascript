@@ -14,15 +14,15 @@ import { themeProps } from './styles/themes/common.js';
 export default class App extends React.Component {
 
   // Criação do construtor da classe, com o argumento props que está dentro da classe que herdamos.
-  constructor(props) {{ 
+  constructor(props){
     super(props)
-    this.state = {
-      theme: 'dark',
-      oiTudoBem: true
-    }}
-
     this.handleToggleTheme = this.handleToggleTheme.bind(this)
   }
+
+  state = {
+      theme: 'dark',
+      oiTudoBem: true
+    }
 
   handleToggleTheme() {
     this.setState(prevState => ({theme: prevState.theme === 'dark' ? 'light' : 'dark'}))
@@ -38,7 +38,7 @@ export default class App extends React.Component {
         </ThemeProvider>
     );
   }
- 
+}
  
   // const [theme, setTheme] = useState('dark')
 
