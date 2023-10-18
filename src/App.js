@@ -20,6 +20,7 @@ export default class App extends React.Component {
       oiTudoBem: true
     }
 
+  // No lugar de utilizarmos a função padrão, onde é necessário alterarmos o this padrão dela, utilizamos a arrow function que não possui um this próprio e utiliza o this do contexto onde ela foi criada.
   handleToggleTheme = () => {
     this.setState(prevState => ({theme: prevState.theme === 'dark' ? 'light' : 'dark'}))
   }
