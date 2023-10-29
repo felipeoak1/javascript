@@ -8,17 +8,18 @@ import posts from './posts';
 
 export default class PostsList extends React.Component {
   render(){
+    
     return (
       <Container>
-        {posts.map(element => (
-          <Post
-            key={element.id}
-            title={element.title}
-            description={element.description}
+        {posts.map(e=>(<Post
+            id={e.id}
+            title = {e.title}
+            description= {e.description}
           />
         ))}
+
       </Container>
-    );
+    )
   }
 }
 

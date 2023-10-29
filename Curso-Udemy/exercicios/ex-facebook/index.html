@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Calc</title>
+
+
+</head>
+<body>
+    <main>
+        <section>
+            <div>
+                <form action="" method="GET">
+                    <label for="n1">N1</label>
+                    <input type="number" name="n1" id="n1">
+
+                    <label for="n2">N2</label>
+                    <input type="number" name="n2" id="n2">
+
+                    <button id="enviar">Enviar</button>
+                </form>
+                <p id="resultado">Teste</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const b1 = document.getElementById('enviar')
+        b1.addEventListener('click', (e)=>{
+            const n1 = document.getElementById('n1')
+            const n2 = document.getElementById('n2')
+            const res = document.getElementById('resultado')
+            
+            res.innerHTML = Number(n1.value) + Number(n2.value)
+            e.preventDefault()
+        })
+
+    </script>
+</body>
+</html>

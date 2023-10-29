@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+
+import {ThemeProvider, ThemeContext} from './contexts/ThemeContext.js'
 
 import GlobalStyle from './styles/global';
 
@@ -14,27 +16,40 @@ import { themeProps } from './styles/themes/common.js';
 export default class App extends React.Component {
 
   // Criação do construtor da classe, com o argumento props que está dentro da classe que herdamos.
-
-  state = {
-      theme: 'dark',
-      oiTudoBem: true
-    }
+  
+  // state = {
+  //   theme : 'dark'
+  // }
 
   // No lugar de utilizarmos a função padrão, onde é necessário alterarmos o this padrão dela, utilizamos a arrow function que não possui um this próprio e utiliza o this do contexto onde ela foi criada.
-  handleToggleTheme = () => {
+  // handleToggleTheme = () => {
     // console.log('handletoggletheme executou')
-    this.setState(prevState=>({theme: prevState.theme == 'dark' ? 'light' : 'dark'}))
+    // this.setState(prevState=>({theme: prevState.theme == 'dark' ? 'light' : 'dark'}))
     // Atualização forçada do componente mesmo sem alteração de props ou states.
     // this.forceUpdate()
-  }
+  // } 
 
   render() {
-    let { theme } = this.state
-    
+  
     return ( 
-        <ThemeProvider theme={{choosedTheme: themes[theme] || themes.dark, themeProps: themeProps}}>
-          <GlobalStyle />
-          <Layout changeColor = {this.handleToggleTheme} tema={theme}/>
+      <ThemeProvider>
+
+        <ThemeContext.Consumer>
+
+        {({theme, handleToggleTheme}) => (
+            <StyledThemeProvider theme={{choosedTheme: themes[theme] || themes.dark, themeProps: themeProps}}>
+
+                <GlobalStyle />
+                <Layout 
+                changeColor = {handleToggleTheme} 
+                tema={theme}
+                />
+                
+            </StyledThemeProvider>
+        )}
+
+        </ThemeContext.Consumer>
+
         </ThemeProvider>
     );
   }

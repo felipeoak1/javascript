@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
+
   background: ${({theme}) => theme.choosedTheme.postBackgroundColor};
   height: 70px;
   display: flex;
