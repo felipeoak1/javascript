@@ -11,6 +11,7 @@ export default class Header extends React.Component {
     // const {tema} = this.props
     
     return ( 
+
       <ThemeContext.Consumer>
         {({theme, handleToggleTheme})=>(
           <Container>
@@ -19,7 +20,6 @@ export default class Header extends React.Component {
           </Container> 
         )}
       </ThemeContext.Consumer>
-
     )
   }
 }

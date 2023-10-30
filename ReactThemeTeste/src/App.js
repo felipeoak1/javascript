@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 
-import {ThemeProvider, ThemeContext} from './contexts/ThemeContext.js'
+import {ThemeProvider, ThemeContext} from './contexts/ThemeContext'
 
 import GlobalStyle from './styles/global';
 
@@ -44,7 +44,7 @@ export default class App extends React.Component {
                 changeColor = {handleToggleTheme} 
                 tema={theme}
                 />
-                
+                  
             </StyledThemeProvider>
         )}
 
